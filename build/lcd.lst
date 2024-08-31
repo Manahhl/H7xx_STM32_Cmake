@@ -1,0 +1,260 @@
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"lcd.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "APP/lcd_driver/lcd.c"
+  19              		.section	.text.LCD_RGB233toRGB565,"ax",%progbits
+  20              		.align	1
+  21              		.global	LCD_RGB233toRGB565
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	LCD_RGB233toRGB565:
+  27              	.LVL0:
+  28              	.LFB0:
+   1:APP/lcd_driver/lcd.c **** #include "lcd.h"
+   2:APP/lcd_driver/lcd.c **** 
+   3:APP/lcd_driver/lcd.c **** uint16_t LCD_RGB233toRGB565(uint8_t color)
+   4:APP/lcd_driver/lcd.c **** {
+  29              		.loc 1 4 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		.loc 1 4 1 is_stmt 0 view .LVU1
+  35 0000 82B0     		sub	sp, sp, #8
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+   5:APP/lcd_driver/lcd.c ****   uint8_t  blue[] = {0,11,21,31}; //��ɫ2-5λ��ɫ���ұ�
+  38              		.loc 1 5 3 is_stmt 1 view .LVU2
+  39              		.loc 1 5 12 is_stmt 0 view .LVU3
+  40 0002 0F4B     		ldr	r3, .L3
+  41 0004 0193     		str	r3, [sp, #4]
+   6:APP/lcd_driver/lcd.c ****   uint16_t color16 = 0;
+  42              		.loc 1 6 3 is_stmt 1 view .LVU4
+  43              	.LVL1:
+   7:APP/lcd_driver/lcd.c ****   //        =====Green=====     ===============Red==============
+   8:APP/lcd_driver/lcd.c ****   color16=(color & 0x1C)<<6|(color&0xC0)<<5|(color&0xE0)<<8;
+  44              		.loc 1 8 3 view .LVU5
+  45              		.loc 1 8 25 is_stmt 0 view .LVU6
+  46 0006 8301     		lsls	r3, r0, #6
+  47 0008 03F4E063 		and	r3, r3, #1792
+  48              		.loc 1 8 41 view .LVU7
+  49 000c 4201     		lsls	r2, r0, #5
+  50 000e 02F4C052 		and	r2, r2, #6144
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 2
+
+
+  51              		.loc 1 8 28 view .LVU8
+  52 0012 1343     		orrs	r3, r3, r2
+  53              		.loc 1 8 57 view .LVU9
+  54 0014 0B4A     		ldr	r2, .L3+4
+  55 0016 02EA0022 		and	r2, r2, r0, lsl #8
+  56 001a 12B2     		sxth	r2, r2
+  57              		.loc 1 8 44 view .LVU10
+  58 001c 1343     		orrs	r3, r3, r2
+  59              	.LVL2:
+   9:APP/lcd_driver/lcd.c ****   //        =====Green=====    =======Blue======
+  10:APP/lcd_driver/lcd.c ****   color16|=(color&0x1C)<<3|blue[color&0x03];
+  60              		.loc 1 10 3 is_stmt 1 view .LVU11
+  61              		.loc 1 10 24 is_stmt 0 view .LVU12
+  62 001e C200     		lsls	r2, r0, #3
+  63 0020 02F0E002 		and	r2, r2, #224
+  64              		.loc 1 10 38 view .LVU13
+  65 0024 00F00300 		and	r0, r0, #3
+  66              	.LVL3:
+  67              		.loc 1 10 32 view .LVU14
+  68 0028 00F10801 		add	r1, r0, #8
+  69 002c 0DEB0100 		add	r0, sp, r1
+  70 0030 10F8041C 		ldrb	r1, [r0, #-4]	@ zero_extendqisi2
+  71              		.loc 1 10 27 view .LVU15
+  72 0034 0A43     		orrs	r2, r2, r1
+  73              		.loc 1 10 10 view .LVU16
+  74 0036 43EA0200 		orr	r0, r3, r2
+  75              	.LVL4:
+  11:APP/lcd_driver/lcd.c ****   return color16;	
+  76              		.loc 1 11 3 is_stmt 1 view .LVU17
+  12:APP/lcd_driver/lcd.c **** }
+  77              		.loc 1 12 1 is_stmt 0 view .LVU18
+  78 003a 80B2     		uxth	r0, r0
+  79              		.loc 1 12 1 view .LVU19
+  80 003c 02B0     		add	sp, sp, #8
+  81              	.LCFI1:
+  82              		.cfi_def_cfa_offset 0
+  83              		@ sp needed
+  84 003e 7047     		bx	lr
+  85              	.L4:
+  86              		.align	2
+  87              	.L3:
+  88 0040 000B151F 		.word	521472768
+  89 0044 00E0FFFF 		.word	-8192
+  90              		.cfi_endproc
+  91              	.LFE0:
+  93              		.section	.text.LCD_Fill,"ax",%progbits
+  94              		.align	1
+  95              		.global	LCD_Fill
+  96              		.syntax unified
+  97              		.thumb
+  98              		.thumb_func
+ 100              	LCD_Fill:
+ 101              	.LVL5:
+ 102              	.LFB1:
+  13:APP/lcd_driver/lcd.c **** /******************************************************************************
+  14:APP/lcd_driver/lcd.c ****       ����˵������ָ�����������ɫ
+  15:APP/lcd_driver/lcd.c ****       ������ݣ�xs,ys   ��ʼ����
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 3
+
+
+  16:APP/lcd_driver/lcd.c ****                 xe,ye   ��ֹ����
+  17:APP/lcd_driver/lcd.c **** 								color       Ҫ������ɫ
+  18:APP/lcd_driver/lcd.c ****       ����ֵ��  ��
+  19:APP/lcd_driver/lcd.c **** ******************************************************************************/
+  20:APP/lcd_driver/lcd.c **** void LCD_Fill(uint16_t xs,uint16_t ys,uint16_t xe,uint16_t ye,uint32_t color)
+  21:APP/lcd_driver/lcd.c **** {
+ 103              		.loc 1 21 1 is_stmt 1 view -0
+ 104              		.cfi_startproc
+ 105              		@ args = 4, pretend = 0, frame = 8
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107              		.loc 1 21 1 is_stmt 0 view .LVU21
+ 108 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 109              	.LCFI2:
+ 110              		.cfi_def_cfa_offset 24
+ 111              		.cfi_offset 4, -24
+ 112              		.cfi_offset 5, -20
+ 113              		.cfi_offset 6, -16
+ 114              		.cfi_offset 7, -12
+ 115              		.cfi_offset 8, -8
+ 116              		.cfi_offset 14, -4
+ 117 0004 82B0     		sub	sp, sp, #8
+ 118              	.LCFI3:
+ 119              		.cfi_def_cfa_offset 32
+ 120 0006 8046     		mov	r8, r0
+ 121 0008 0E46     		mov	r6, r1
+ 122 000a 1546     		mov	r5, r2
+ 123 000c 1F46     		mov	r7, r3
+ 124 000e 089B     		ldr	r3, [sp, #32]
+ 125              	.LVL6:
+  22:APP/lcd_driver/lcd.c **** 	uint16_t i,j;
+ 126              		.loc 1 22 2 is_stmt 1 view .LVU22
+  23:APP/lcd_driver/lcd.c **** 	uint8_t Color[2]={color>>8,color&0xff};
+ 127              		.loc 1 23 2 view .LVU23
+ 128              		.loc 1 23 25 is_stmt 0 view .LVU24
+ 129 0010 1A0A     		lsrs	r2, r3, #8
+ 130              	.LVL7:
+ 131              		.loc 1 23 10 view .LVU25
+ 132 0012 8DF80420 		strb	r2, [sp, #4]
+ 133 0016 8DF80530 		strb	r3, [sp, #5]
+  24:APP/lcd_driver/lcd.c **** 	LCD_Address_Set(xs,ys,xe-1,ye-1);
+ 134              		.loc 1 24 2 is_stmt 1 view .LVU26
+ 135 001a 7B1E     		subs	r3, r7, #1
+ 136 001c 6A1E     		subs	r2, r5, #1
+ 137 001e 9BB2     		uxth	r3, r3
+ 138 0020 92B2     		uxth	r2, r2
+ 139 0022 FFF7FEFF 		bl	LCD_Address_Set
+ 140              	.LVL8:
+  25:APP/lcd_driver/lcd.c **** 	LCD_WR_REG(0x2C);
+ 141              		.loc 1 25 2 view .LVU27
+ 142 0026 2C20     		movs	r0, #44
+ 143 0028 FFF7FEFF 		bl	LCD_WR_REG
+ 144              	.LVL9:
+  26:APP/lcd_driver/lcd.c **** 	for(i=ys;i<ye;i++)
+ 145              		.loc 1 26 2 view .LVU28
+ 146              		.loc 1 26 2 is_stmt 0 view .LVU29
+ 147 002c 0AE0     		b	.L6
+ 148              	.LVL10:
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 4
+
+
+ 149              	.L7:
+  27:APP/lcd_driver/lcd.c **** 	{
+  28:APP/lcd_driver/lcd.c **** 		for(j=xs;j<xe;j++)
+  29:APP/lcd_driver/lcd.c **** 		{
+  30:APP/lcd_driver/lcd.c **** 			LCD_4LineTransmit_DATA(0x3C,2,Color);
+ 150              		.loc 1 30 4 is_stmt 1 discriminator 3 view .LVU30
+ 151 002e 01AA     		add	r2, sp, #4
+ 152 0030 0221     		movs	r1, #2
+ 153 0032 3C20     		movs	r0, #60
+ 154 0034 FFF7FEFF 		bl	LCD_4LineTransmit_DATA
+ 155              	.LVL11:
+  28:APP/lcd_driver/lcd.c **** 		{
+ 156              		.loc 1 28 18 discriminator 3 view .LVU31
+ 157 0038 0134     		adds	r4, r4, #1
+ 158              	.LVL12:
+  28:APP/lcd_driver/lcd.c **** 		{
+ 159              		.loc 1 28 18 is_stmt 0 discriminator 3 view .LVU32
+ 160 003a A4B2     		uxth	r4, r4
+ 161              	.LVL13:
+ 162              	.L8:
+  28:APP/lcd_driver/lcd.c **** 		{
+ 163              		.loc 1 28 13 is_stmt 1 discriminator 1 view .LVU33
+ 164 003c AC42     		cmp	r4, r5
+ 165 003e F6D3     		bcc	.L7
+  26:APP/lcd_driver/lcd.c **** 	for(i=ys;i<ye;i++)
+ 166              		.loc 1 26 17 discriminator 2 view .LVU34
+ 167 0040 0136     		adds	r6, r6, #1
+ 168              	.LVL14:
+  26:APP/lcd_driver/lcd.c **** 	for(i=ys;i<ye;i++)
+ 169              		.loc 1 26 17 is_stmt 0 discriminator 2 view .LVU35
+ 170 0042 B6B2     		uxth	r6, r6
+ 171              	.LVL15:
+ 172              	.L6:
+  26:APP/lcd_driver/lcd.c **** 	for(i=ys;i<ye;i++)
+ 173              		.loc 1 26 12 is_stmt 1 discriminator 1 view .LVU36
+ 174 0044 BE42     		cmp	r6, r7
+ 175 0046 01D2     		bcs	.L11
+  28:APP/lcd_driver/lcd.c **** 		{
+ 176              		.loc 1 28 8 is_stmt 0 view .LVU37
+ 177 0048 4446     		mov	r4, r8
+ 178 004a F7E7     		b	.L8
+ 179              	.L11:
+  31:APP/lcd_driver/lcd.c **** 		}
+  32:APP/lcd_driver/lcd.c **** 	}
+  33:APP/lcd_driver/lcd.c **** }
+ 180              		.loc 1 33 1 view .LVU38
+ 181 004c 02B0     		add	sp, sp, #8
+ 182              	.LCFI4:
+ 183              		.cfi_def_cfa_offset 24
+ 184              		@ sp needed
+ 185 004e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 186              		.loc 1 33 1 view .LVU39
+ 187              		.cfi_endproc
+ 188              	.LFE1:
+ 190              		.text
+ 191              	.Letext0:
+ 192              		.file 2 "c:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/..
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 5
+
+
+ 193              		.file 3 "c:\\ST\\STM32CubeCLT_1.16.0\\GNU-tools-for-STM32\\bin\\../lib/gcc/arm-none-eabi/12.3.1/..
+ 194              		.file 4 "APP/lcd_driver/lcd_init.h"
+ARM GAS  C:\Users\86138\AppData\Local\Temp\ccjeShQq.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd.c
+C:\Users\86138\AppData\Local\Temp\ccjeShQq.s:20     .text.LCD_RGB233toRGB565:00000000 $t
+C:\Users\86138\AppData\Local\Temp\ccjeShQq.s:26     .text.LCD_RGB233toRGB565:00000000 LCD_RGB233toRGB565
+C:\Users\86138\AppData\Local\Temp\ccjeShQq.s:88     .text.LCD_RGB233toRGB565:00000040 $d
+C:\Users\86138\AppData\Local\Temp\ccjeShQq.s:94     .text.LCD_Fill:00000000 $t
+C:\Users\86138\AppData\Local\Temp\ccjeShQq.s:100    .text.LCD_Fill:00000000 LCD_Fill
+
+UNDEFINED SYMBOLS
+LCD_Address_Set
+LCD_WR_REG
+LCD_4LineTransmit_DATA

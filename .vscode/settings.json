@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "stm32h7xx_hal.h": "c",
+        "stm32h7xx_hal_conf.h": "c",
+        "lcd.h": "c",
+        "qspi.h": "c",
+        "lcd_init.h": "c"
+    },
+    "makefile.makePath": "C:\\mingw64\\bin"
+}
