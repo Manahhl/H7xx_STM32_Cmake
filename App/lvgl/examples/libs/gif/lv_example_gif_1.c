@@ -1,5 +1,4 @@
-#include "lvgl.h"
-//extern lv_obj_t * lv_gif_create(lv_obj_t * parent);
+#include "../../lv_examples.h"
 #if LV_USE_GIF && LV_BUILD_EXAMPLES
 
 /**
@@ -12,7 +11,7 @@ void lv_example_gif_1(void)
 
     img = lv_gif_create(lv_scr_act());
     lv_gif_set_src(img, &img_bulb_gif);
-    lv_obj_align(img, LV_ALIGN_CENTER, 20, 0);
+    lv_obj_align(img, LV_ALIGN_LEFT_MID, 20, 0);
 
     img = lv_gif_create(lv_scr_act());
     /* Assuming a File system is attached to letter 'A'

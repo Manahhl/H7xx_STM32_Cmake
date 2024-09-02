@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.22631")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_2/cmake/gcc-arm-none-eabi.cmake")
+include("D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4/cmake/gcc-arm-none-eabi.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

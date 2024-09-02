@@ -1,4 +1,4 @@
-# Install script for directory: D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_2/cmake/stm32cubemx
+# Install script for directory: D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4/cmake/stm32cubemx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

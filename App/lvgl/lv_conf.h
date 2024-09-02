@@ -76,7 +76,7 @@
 /*====================
    HAL SETTINGS
  *====================*/
-//teÐÅºÅ10msË¢ÐÂÒ»´Î
+//teï¿½Åºï¿½10msË¢ï¿½ï¿½Ò»ï¿½ï¿½
 /*Default display refresh period. LVG will redraw changed areas with this period time*/
 #define LV_DISP_DEF_REFR_PERIOD  5    /*[ms]*/
 
@@ -768,7 +768,7 @@
 #define LV_USE_DEMO_STRESS 1
 
 /*Music player demo*/
-#define LV_USE_DEMO_MUSIC 1
+#define LV_USE_DEMO_MUSIC 0
 #if LV_USE_DEMO_MUSIC
     #define LV_DEMO_MUSIC_SQUARE    1
     #define LV_DEMO_MUSIC_LANDSCAPE 1

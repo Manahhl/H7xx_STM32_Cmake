@@ -5,7 +5,11 @@
         "stm32h7xx_hal_conf.h": "c",
         "lcd.h": "c",
         "qspi.h": "c",
-        "lcd_init.h": "c"
+        "lcd_init.h": "c",
+        "lv_conf.h": "c",
+        "lvgl.h": "c",
+        "string": "c",
+        "lv_port_disp_template.h": "c"
     },
     "makefile.makePath": "C:\\mingw64\\bin"
 }

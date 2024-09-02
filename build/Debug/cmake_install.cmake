@@ -1,4 +1,4 @@
-# Install script for directory: D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_2
+# Install script for directory: D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_2/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
+  include("D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4/build/Debug/App/lvgl/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_2/build/Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/D_DISK_RESTORE/cubemx_project_test/H750/H7xx_CMAKE_PRJS/H7xx_Cmake_4/build/Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -27,6 +27,7 @@
 #include "lcd.h"
 #include "lcd_init.h"
 #include "QSPI.h"
+#include "lvgl.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +102,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   QSPI_GPIOInit();
   QSPI_Init();
-  LCD_Init();
+  //LCD_Init();
+  lv_init();
+  lv_port_disp_init();
+  lv_demo_stress();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,19 +115,20 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    LCD_Fill(0,0,360,360,0xff00);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0xef10);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0xdf20);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0xcf30);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0xbf40);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0xaf50);
-    HAL_Delay(50);
-    LCD_Fill(0,0,360,360,0x9f60);
+    // LCD_Fill(0,0,360,360,0xff00);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0xef10);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0xdf20);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0xcf30);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0xbf40);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0xaf50);
+    // HAL_Delay(50);
+    // LCD_Fill(0,0,360,360,0x9f60);
+    lv_task_handler();
     printf("hello world!\r\n");
   }
   /* USER CODE END 3 */

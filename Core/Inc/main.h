@@ -3,7 +3,7 @@
  * @Date: 2024-08-31 09:44:46
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @LastEditTime: 2024-08-31 10:10:22
- * @FilePath: \H7xx_Cmake_2\Core\Inc\main.h
+ * @FilePath: \H7xx_Cmake_4\Core\Inc\main.h
  * @Description: 
  * 
  * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 

@@ -13,7 +13,7 @@
 
 #include "lcd_init.h"
 
-void LCD_Fill(uint16_t xs,uint16_t ys,uint16_t xe,uint16_t ye,uint32_t color);
+void LCD_Fill(uint16_t xs,uint16_t ys,uint16_t xe,uint16_t ye,uint16_t *color);
 
 //������ɫ
 #define WHITE         	 0xFFFF

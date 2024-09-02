@@ -97,8 +97,7 @@ extern "C" {
 
 /*------------------
  * DEFAULT FONT
- *-----------------*/ 
-
+ *-----------------*/
 #ifdef CONFIG_LV_FONT_DEFAULT_MONTSERRAT_8
 #  define CONFIG_LV_FONT_DEFAULT &lv_font_montserrat_8
 #elif defined(CONFIG_LV_FONT_DEFAULT_MONTSERRAT_10)

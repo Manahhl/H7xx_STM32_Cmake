@@ -3,7 +3,7 @@
  * @Date: 2024-08-31 09:44:45
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @LastEditTime: 2024-08-31 10:29:37
- * @FilePath: \H7xx_Cmake_2\Core\Src\gpio.c
+ * @FilePath: \H7xx_Cmake_4\Core\Src\gpio.c
  * @Description: 
  * 
  * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 

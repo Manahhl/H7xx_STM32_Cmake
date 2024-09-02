@@ -2,8 +2,8 @@
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2024-08-31 10:07:19
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-08-31 15:04:34
- * @FilePath: \H7xx_Cmake_2\App\lcd_driver\lcd.c
+ * @LastEditTime: 2024-09-02 17:51:02
+ * @FilePath: \H7xx_Cmake_4\App\lcd_driver\lcd.c
  * @Description: 
  * 
  * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
@@ -27,19 +27,21 @@ uint16_t LCD_RGB233toRGB565(uint8_t color)
 								color       Ҫ������ɫ
       ����ֵ��  ��
 ******************************************************************************/
-void LCD_Fill(uint16_t xs,uint16_t ys,uint16_t xe,uint16_t ye,uint32_t color)
+void LCD_Fill(uint16_t xs,uint16_t ys,uint16_t xe,uint16_t ye,uint16_t *color)
 {
 	uint16_t i,j;
-	uint8_t Color[2]={color>>8,color&0xff};
-	LCD_Address_Set(xs,ys,xe-1,ye-1);
+	//uint8_t Color[2]={color>>8,color&0xff};
+	LCD_Address_Set(xs,ys,xe,ye);
 	LCD_WR_REG(0x2C);
-	for(i=ys;i<ye;i++)
+	for(i=ys;i<=ye;i++)
 	{
-		for(j=xs;j<xe;j++)
+		for(j=xs;j<=xe;j++)
 		{
-			LCD_4LineTransmit_DATA(0x3C,2,Color);
+			LCD_4LineTransmit_DATA(0x3C,2,color);
+			color++;
 		}
 	}
+
 }
 
 

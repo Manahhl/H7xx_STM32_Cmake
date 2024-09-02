@@ -1,13 +1,3 @@
-/*
- * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @Date: 2024-07-19 10:50:49
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2024-08-24 17:52:57
- * @FilePath: \MDK-ARMd:\D_DISK_RESTORE\cubemx_project_test\H750\sh8601_qspi\H750_source_test\LVGL\examples\porting\lv_port_disp_template.h
- * @Description: 
- * 
- * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
- */
 /**
  * @file lv_port_disp_templ.h
  *
@@ -29,7 +19,7 @@ extern "C" {
 #if defined(LV_LVGL_H_INCLUDE_SIMPLE)
 #include "lvgl.h"
 #else
-#include "lvgl.h"
+#include "../../lvgl.h"
 #endif
 
 /*********************
